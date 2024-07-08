@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="./Assets/Logo.png">
     <script type="module" src="gauth.js" defer></script>
 </head>
+
 <body>
     <nav>
         
@@ -27,7 +28,7 @@
             <li><a href="login.html" id="sili">Sign in/Create account</a></li>
           
         </ul>
-        <div id="menu">
+        <div id="menu" onclick="openSidebar()">
             <img src="./Assets/menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
             
         </div>
@@ -189,7 +190,16 @@
 </footer>
 
 <script>
+function openSidebar(){
+ 
+ let sidebar= document.querySelector('.sidebar');
+ sidebar.style.display="flex";
+}
 
+function closeSidebar(){
+ let sidebar= document.querySelector('.sidebar');
+ sidebar.style.display="none";
+}
 
 const apiKey="82234dc63a25b308680db73c10bcf9d2"
 const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -236,23 +246,16 @@ searchBtn.addEventListener("click",()=>{
     checkWeather(searchBox.value);
 });
 
- const button=document.querySelector('#menu');
-button.addEventListener('click',()=>{
-   
-   const sidebar= document.querySelector('.sidebar');
-   sidebar.style.display="flex";
-})
- 
-function openSidebar(){
-   alert('i was clicked')
-   const sidebar= document.querySelector('.sidebar');
-   sidebar.style.display="flex";
-}
+//  const button=document.querySelector('#menu');
+// button.addEventListener('click',()=>{
+//    alert('i was clicked')
+//    const sidebar= document.querySelector('.sidebar');
+//    sidebar.style.display="flex";
+// })
+const menuButton = document.getElementById('menu');
+menuButton.addEventListener('click', openSidebar);
 
-function closeSidebar(){
-   const sidebar= document.querySelector('.sidebar');
-   sidebar.style.display="none";
-}
+
     </script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="./Demo.js"></script>
