@@ -27,8 +27,9 @@
             <li><a href="login.html" id="sili">Sign in/Create account</a></li>
           
         </ul>
-        <div id="menu" onclick="openSidebar()">
+        <div id="menu">
             <img src="./Assets/menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            
         </div>
     </nav>
     <nav class="sidebar">
@@ -38,7 +39,7 @@
             <li><a href="login.html" id="sili">Sign in/Create account</a></li>
             <li><a href="#card" class="navel">Home</a></li>
             <li><a href="#aboutus" class="navel">About Us</a></li>
-            <li><a href="#Box" clss="navel">Services</a></li>
+            <li><a href="#Box" class="navel">Services</a></li>
             <li><a href="#" class="navel">Blog/News</a></li>
             <li><a href="mailto:cropcare918@gmail.com? subject=Buy Crop Care" class="navel">Contact Us</a></li>
             
@@ -234,7 +235,16 @@ async function checkWeather(city){
 searchBtn.addEventListener("click",()=>{
     checkWeather(searchBox.value);
 });
+
+ const button=document.querySelector('#menu');
+button.addEventListener('click',()=>{
+   
+   const sidebar= document.querySelector('.sidebar');
+   sidebar.style.display="flex";
+})
+ 
 function openSidebar(){
+   alert('i was clicked')
    const sidebar= document.querySelector('.sidebar');
    sidebar.style.display="flex";
 }
@@ -243,10 +253,8 @@ function closeSidebar(){
    const sidebar= document.querySelector('.sidebar');
    sidebar.style.display="none";
 }
- 
- 
     </script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-<script src="Demo.js"></script>
+<script src="./Demo.js"></script>
 </body>
 </html>
